@@ -39,7 +39,7 @@ public class SQL  extends SQLiteOpenHelper {
                 + "description TEXT NOT NULL, "
                 + "quantity INTEGER NOT NULL, "
                 + "category TEXT NOT NULL, "
-                +  "price INTEGER NOT NULL, "
+                +  "price REAL NOT NULL, "
                 +  "image BLOB); "
         );
         db.execSQL("CREATE TABLE transactions ("

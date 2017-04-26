@@ -1,23 +1,28 @@
 package com.example.duyanhtang.projectonlinepharmacy;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class LoginPage extends Activity {
+    final int NEW_USER=0,MAIN=0;
     SQL sql;
     SQLiteDatabase db;
     Button login,newuser;
@@ -25,6 +30,7 @@ public class LoginPage extends Activity {
     String[] categories={"Medicine","Personal Care","Vitamins","Beauty"};
     AssetManager asm;
     SharedPreferences sharedPref;
+    EditText user,pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +39,14 @@ public class LoginPage extends Activity {
         login=(Button) findViewById(R.id.login);
         newuser=(Button) findViewById(R.id.newuser);
         status=(TextView) findViewById(R.id.status);
+        user=(EditText) findViewById(R.id.userlogin);
+        pass=(EditText) findViewById(R.id.passwordlogin);
         newuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(LoginPage.this,NewUser.class);
 
-                startActivity(intent);
+                startActivityForResult(intent,NEW_USER);
             }
         });
         login.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +58,12 @@ public class LoginPage extends Activity {
 
                 }else
                     Toast.makeText(LoginPage.this, "Database not deleted", Toast.LENGTH_LONG).show();*/
+                if (user.getText().toString().length()*pass.getText().toString().length()==0){
+                    Toast.makeText(LoginPage.this,"The fields are blank",Toast.LENGTH_LONG);
+                    return;
+                }
+                db=sql.getReadableDatabase();
+                Cursor cur=db.rawQuery("select password from login_info where _id=?",new String[]{});
             }
         });
         Log.d("Reading","");
@@ -60,23 +74,52 @@ public class LoginPage extends Activity {
     }
 
     private void readData() {
+        sql=new SQL(LoginPage.this);
+        db=sql.getWritableDatabase();
         asm = LoginPage.this.getResources().getAssets();
         try {
             InputStreamReader isr=new InputStreamReader(asm.open("data.txt"));
             BufferedReader buf = new BufferedReader(isr);
             String s;
-            int i=1;
             while((s=buf.readLine())!=null){
-                i++;
                 String[] arr=s.split(";");
-                //status.setText(status.getText()+"\nLength "+s.split(";").length+"");
-
+                Log.d("Array", Arrays.toString( arr));
+                Log.d("Length",""+arr.length);
+                //check for existing item
+                Cursor cur=db.rawQuery("SELECT * from item_info WHERE name=?",new String[]{arr[0]});
+                if (cur.getCount()==0){ // if item does not exist then add
+                    ContentValues values = new ContentValues();
+                    values.put("name", arr[0]);
+                    values.put("description", arr[1]);
+                    values.put("quantity", Integer.parseInt(arr[2]));
+                    values.put("category",arr[3]);
+                    values.put("price",Float.parseFloat(arr[4]));
+                    if (db.insert("item_info", null, values)==-1){
+                        Log.d("Status sql read","read not successful");
+                    }
+                    else{
+                        Log.d("Status sql read","read successful");
+                    };
+                }
+                else{
+                    Log.d("Status sql read","already read this");
+                }
             }
+
             isr.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+    ;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode==NEW_USER && resultCode==0){
+            Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG);
+        }
+        //super.onActivityResult(requestCode, resultCode, data);
 
     }
 }

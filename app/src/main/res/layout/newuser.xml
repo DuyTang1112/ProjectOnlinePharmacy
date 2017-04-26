@@ -171,19 +171,39 @@
         android:id="@+id/newpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/address"
-        android:layout_below="@+id/address"
-        android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_alignBaseline="@+id/textView12"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_alignStart="@+id/address" />
+
+    <EditText
+        android:id="@+id/userid"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/newpass"
+        android:layout_alignStart="@+id/newpass"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/userid"
+        android:layout_alignStart="@+id/textView11"
+        android:layout_marginBottom="13dp"
+        android:text="UserID"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/newpass"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Register" />
+        android:text="Register"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/userid"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
