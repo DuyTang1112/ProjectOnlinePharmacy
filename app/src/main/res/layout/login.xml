@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/newuser">
 
     <TextView
         android:id="@+id/textView"
@@ -13,7 +13,6 @@
         android:layout_marginEnd="12dp"
         android:layout_toStartOf="@+id/newuser"
         android:text="Password:"
-        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
     <EditText
@@ -24,8 +23,7 @@
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@+id/textView"
         android:ems="10"
-        android:inputType="textPassword"
-        android:textColor="@android:color/background_light" />
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/userlogin"
@@ -35,8 +33,7 @@
         android:layout_alignEnd="@+id/passwordlogin"
         android:layout_marginBottom="55dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/background_light" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView2"
@@ -46,7 +43,6 @@
         android:layout_alignTop="@+id/userlogin"
         android:layout_marginTop="11dp"
         android:text="Username:"
-        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
     <Button

@@ -79,10 +79,7 @@ public class NewUser extends Activity {
                     return;
                 }
                 registerIntoSql();
-                Intent intent=new Intent();
-                intent.putExtra("status",1);
-                setResult(0,intent);
-                finish();
+
             }
         });
     }
@@ -115,9 +112,15 @@ public class NewUser extends Activity {
             values.put("address", address.getText().toString());
             if (db.insert("client_info", null, values)==-1){
                 Log.d("Status sql info","info not successful");
+                Intent intent=new Intent();
+                setResult(1,intent);
+                finish();
             }
             else{
                 Log.d("Status sql info","info successful");
+                Intent intent=new Intent();
+                setResult(2,intent);
+                finish();
             }
 
         }

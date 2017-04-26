@@ -59,11 +59,25 @@ public class LoginPage extends Activity {
                 }else
                     Toast.makeText(LoginPage.this, "Database not deleted", Toast.LENGTH_LONG).show();*/
                 if (user.getText().toString().length()*pass.getText().toString().length()==0){
-                    Toast.makeText(LoginPage.this,"The fields are blank",Toast.LENGTH_LONG);
+                    Toast.makeText(LoginPage.this,"The fields should be filled",Toast.LENGTH_LONG).show();
                     return;
                 }
+                Log.d("Login user",user.getText().toString());
+                Log.d("Login pass",pass.getText().toString());
                 db=sql.getReadableDatabase();
-                Cursor cur=db.rawQuery("select password from login_info where _id=?",new String[]{});
+                Cursor cur=db.rawQuery("select password from login_info where _id=?",new String[]{user.getText().toString()});
+                if (cur.getCount()==0){
+                    Toast.makeText(LoginPage.this,"No such user is found",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    cur.moveToFirst();
+                    if (cur.getString(0).equals(pass.getText().toString())){
+                        Toast.makeText(LoginPage.this,"Login successfully",Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        Toast.makeText(LoginPage.this,"Password does not match",Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         });
         Log.d("Reading","");
@@ -116,8 +130,9 @@ public class LoginPage extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode==NEW_USER && resultCode==0){
-            Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG);
+        if (requestCode==NEW_USER ){
+            if (resultCode==2)Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG).show();
+            else if (resultCode==1)Toast.makeText(LoginPage.this,"Cannot register new user",Toast.LENGTH_LONG).show();
         }
         //super.onActivityResult(requestCode, resultCode, data);
 

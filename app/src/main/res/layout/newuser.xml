@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/newuser">
 
     <TextView
         android:id="@+id/textView3"
@@ -96,11 +98,11 @@
         android:textSize="16sp" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioGroup"
-        android:layout_alignTop="@+id/age"
-        android:layout_alignEnd="@+id/lname">
+        android:layout_alignEnd="@+id/lname"
+        android:layout_alignTop="@+id/age">
 
         <RadioButton
             android:id="@+id/male"
@@ -171,21 +173,21 @@
         android:id="@+id/newpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
         android:layout_alignBaseline="@+id/textView12"
         android:layout_alignBottom="@+id/textView12"
-        android:layout_alignStart="@+id/address" />
+        android:layout_alignStart="@+id/address"
+        android:ems="10"
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/userid"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_below="@+id/newpass"
         android:layout_alignStart="@+id/newpass"
-        android:layout_marginTop="16dp" />
+        android:layout_below="@+id/newpass"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView6"
@@ -201,9 +203,9 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="17dp"
         android:layout_below="@+id/userid"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Register" />
 
 </RelativeLayout>
