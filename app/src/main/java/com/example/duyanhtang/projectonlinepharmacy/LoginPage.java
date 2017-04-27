@@ -93,7 +93,7 @@ public class LoginPage extends Activity {
     }
 
     private void readData() {
-        sql=new SQL(LoginPage.this);
+        sql= SQL.getInstance(LoginPage.this);
         db=sql.getWritableDatabase();
         asm = LoginPage.this.getResources().getAssets();
         try {
@@ -136,10 +136,15 @@ public class LoginPage extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode==NEW_USER ){
-            if (resultCode==2)Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG).show();
-            else if (resultCode==1)Toast.makeText(LoginPage.this,"Cannot register new user",Toast.LENGTH_LONG).show();
+            if (data!=null){
+                if (data.getIntExtra("result",-1)==0) Toast.makeText(LoginPage.this,"Cannot register new user",Toast.LENGTH_LONG).show();
+                else if (data.getIntExtra("result",-1)==1) Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG).show();
+            }
+            if (resultCode==2) Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG).show();
+            //if (resultCode==2)Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG).show();
+            //else if (resultCode==1) Toast.makeText(LoginPage.this,"Cannot register new user",Toast.LENGTH_LONG).show();
         }
-        //super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
 
     }
 }

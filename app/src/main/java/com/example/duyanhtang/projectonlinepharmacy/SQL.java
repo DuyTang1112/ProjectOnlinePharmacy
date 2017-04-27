@@ -7,12 +7,23 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by Duy Anh Tang on 4/24/2017.
  */
-
+//This is a singleton class
 public class SQL  extends SQLiteOpenHelper {
+    public static SQL sqlInstance=null;
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "project.db";
     public SQL(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+    public static synchronized SQL getInstance(Context context) {
+
+        // Use the application context, which will ensure that you
+        // don't accidentally leak an Activity's context.
+        // See this article for more information: http://bit.ly/6LRzfx
+        if (sqlInstance == null) {
+            sqlInstance = new SQL(context.getApplicationContext());
+        }
+        return sqlInstance;
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -46,7 +57,7 @@ public class SQL  extends SQLiteOpenHelper {
                 + " _id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "userid TEXT, "
                 + "itemid INTEGER NOT NULL, "
-                + "quantity INTEGER NOT NULL,"
+                + "quantity INTEGER NOT NULL, "
                 + "date DATETIME, "
                 + "FOREIGN KEY(userid) REFERENCES client_info(_id), "
                 + "FOREIGN KEY(itemid) REFERENCES item_info(_id) ); "
@@ -56,6 +67,13 @@ public class SQL  extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // on upgrade drop older tables
+        db.execSQL("DROP TABLE IF EXISTS login_info" );
+        db.execSQL("DROP TABLE IF EXISTS item_info");
+        db.execSQL("DROP TABLE IF EXISTS client_info");
+        db.execSQL("DROP TABLE IF EXISTS transactions");
 
+        // create new tables
+        onCreate(db);
     }
 }

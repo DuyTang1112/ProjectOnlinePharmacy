@@ -85,44 +85,51 @@ public class NewUser extends Activity {
     }
 
     private void registerIntoSql() {
-        sql=new SQL(NewUser.this);
+        sql=SQL.getInstance(NewUser.this);
         db=sql.getWritableDatabase();
-        Cursor cur=db.rawQuery("SELECT * from login_info WHERE _id=?",new String[]{userid.getText().toString()});
+        String username=userid.getText().toString();
+        Cursor cur=db.rawQuery("SELECT * from login_info WHERE _id=?",new String[]{username});
         if (cur.getCount()==0){
             ContentValues values = new ContentValues();
             //insert into login_info table
-            values.put("_id", userid.getText().toString());
+
+            values.put("_id", username);
             values.put("password", password.getText().toString());
-            if (db.insert("login_info", null, values)==-1){
+
+            long check=db.insert("login_info", null, values);
+
+            if (check==-1){
                 Log.d("Status sql register","register not successful");
             }
-            else{
-                Log.d("Status sql register","register successful");
+            else {
+                Log.d("Status sql register", "register successful");
+                //insert into customer info
+                values = new ContentValues();
+                values.put("_id", username);
+                values.put("fname", fname.getText().toString());
+                values.put("mname", mname.getText().toString());
+                values.put("lname", lname.getText().toString());
+                values.put("age", Integer.parseInt(age.getText().toString()));
+                values.put("gender", gender ? "Male" :"Female");
+                values.put("email", email.getText().toString());
+                values.put("address", address.getText().toString());
+                check=db.insert("client_info", null, values);
+                //sql.close();
+                if (check== -1) {
+                    Log.d("Status sql info", "info not successful");
+                    Toast.makeText(this, "Cannot register new user", Toast.LENGTH_LONG).show();
+                } else {
+                    Log.d("Status sql info", "info successful");
+                    Toast.makeText(this, "New user created successfully ", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent();
+                    intent.putExtra("result", 1);
+                    setResult(2, intent);
+                    finish();
+                }
             }
-
-            //insert into customer info
-            values = new ContentValues();
-            values.put("_id", userid.getText().toString());
-            values.put("fname", fname.getText().toString());
-            values.put("mname", mname.getText().toString());
-            values.put("lname", lname.getText().toString());
-            values.put("age", Integer.parseInt(fname.getText().toString()));
-            values.put("gender", male.isChecked()?1:0);
-            values.put("email", email.getText().toString());
-            values.put("address", address.getText().toString());
-            if (db.insert("client_info", null, values)==-1){
-                Log.d("Status sql info","info not successful");
-                Intent intent=new Intent();
-                setResult(1,intent);
-                finish();
-            }
-            else{
-                Log.d("Status sql info","info successful");
-                Intent intent=new Intent();
-                setResult(2,intent);
-                finish();
-            }
-
+        }
+        else{
+            Toast.makeText(this,"UserID is already used",Toast.LENGTH_LONG).show();
         }
     }
 

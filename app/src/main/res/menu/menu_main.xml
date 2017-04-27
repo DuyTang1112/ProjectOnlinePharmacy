@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sel_category"
+        android:title="Select category" >
+        <menu>
+            <item android:id="@+id/med_category" android:title="Medicine"></item>
+            <item android:id="@+id/pers_care_category" android:title="Personal Care"></item>
+            <item android:id="@+id/vitamins_category" android:title="Vitamins"></item>
+            <item android:id="@+id/beauty_category" android:title="Beauty"></item>
+        </menu>
+    </item>>
+    <item
+        android:id="@+id/user_info"
+        android:title="User info" />
+    <item
+        android:id="@+id/trans_hist"
+        android:title="Transaction history" />
+    <item
+        android:id="@+id/sign_out"
+        android:title="Sign out" />
+</menu>

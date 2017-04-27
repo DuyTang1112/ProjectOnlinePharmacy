@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="181dp"
+        android:layout_width="204dp"
         android:layout_height="57dp"
         android:layout_x="87dp"
         android:layout_y="52dp"
@@ -53,8 +53,8 @@
         style="@android:style/Widget.Button"
         android:layout_width="72dp"
         android:layout_height="wrap_content"
-        android:layout_x="277dp"
-        android:layout_y="72dp"
+        android:layout_x="296dp"
+        android:layout_y="64dp"
         android:text="Add "
         android:textSize="12sp" />
 </AbsoluteLayout>
