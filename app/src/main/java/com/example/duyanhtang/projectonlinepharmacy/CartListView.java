@@ -9,27 +9,28 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.HashMap;
+import java.util.Vector;
 
 /**
  * Created by dani1covi on 4/26/17.
  */
 
-public class cartListView extends BaseAdapter {
+public class CartListView extends BaseAdapter {
     Context activity;
-    Item[] item;
+    Vector<Item> item;
     HashMap<String, Integer> cart;
 
 
-    public cartListView(Context ctx, Item[] item,HashMap<String,Integer> hm) {
+    public CartListView(Context ctx, Vector<Item> item, HashMap<String,Integer> hm) {
         activity = ctx;
-        item = item;
+        this.item = item;
         cart=hm;
 
     }
 
     @Override
     public int getCount() {
-        return item.length;
+        return item.size();
     }
 
     @Override
@@ -59,10 +60,10 @@ public class cartListView extends BaseAdapter {
         ImageButton cart = (ImageButton) newView.findViewById(R.id.cart);
         ImageButton search = (ImageButton) newView.findViewById(R.id.find);
 
-        name.setText(item[position].getName());
-        desc.setText(item[position].getDescription());
-        stock.setText(item[position].getStock());
-        price.setText(item[position].getPrice() + "");
+        name.setText(item.get(position).getName());
+        desc.setText(item.get(position).getDescription());
+        stock.setText(item.get(position).getStock());
+        price.setText(item.get(position).getPrice() + "");
 
 
         return newView;

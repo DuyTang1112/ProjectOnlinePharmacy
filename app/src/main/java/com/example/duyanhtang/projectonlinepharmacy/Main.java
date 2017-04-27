@@ -1,8 +1,11 @@
 package com.example.duyanhtang.projectonlinepharmacy;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +31,7 @@ public class Main extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.absolut);
+        setTitle("Store");
         sql=new SQL(Main.this);
         db=sql.getReadableDatabase();
         lv=(ListView) findViewById(R.id.listview);
@@ -41,7 +45,8 @@ public class Main extends AppCompatActivity {
                     return;
                 }
                 String sql="select name, description, quantity, category, price from item_info " +
-                        "where name like '%"+searchbar.getText().toString()+"%' or category like '%"+searchbar.getText().toString()+"%'";
+                        "where name like '%"+searchbar.getText().toString().toLowerCase()+
+                        "%' or category like '%"+searchbar.getText().toString().toLowerCase()+"%'";
                 Cursor cur=db.rawQuery(sql,null);
                 cur.moveToFirst();
                 Item[] items=new Item[cur.getCount()];
@@ -63,6 +68,9 @@ public class Main extends AppCompatActivity {
         readData();
     }
 
+    /**
+     * showing all items
+     */
     private void readData() {
 
         Cursor cur=db.rawQuery("select name, description, quantity, category, price from item_info",null);

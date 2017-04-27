@@ -60,7 +60,7 @@ public class LoginPage extends Activity {
                 }else
                     Toast.makeText(LoginPage.this, "Database not deleted", Toast.LENGTH_LONG).show();*/
                 if (user.getText().toString().length()*pass.getText().toString().length()==0){
-                    Toast.makeText(LoginPage.this,"The fields should be filled",Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginPage.this,"All fields should be filled",Toast.LENGTH_LONG).show();
                     return;
                 }
                 Log.d("Login user",user.getText().toString());

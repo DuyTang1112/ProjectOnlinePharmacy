@@ -1,15 +1,19 @@
 package com.example.duyanhtang.projectonlinepharmacy;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class listView extends BaseAdapter {
     Context activity;
@@ -39,7 +43,7 @@ public class listView extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View newView = null;
         LayoutInflater inf = LayoutInflater.from(activity);
 
@@ -55,7 +59,25 @@ public class listView extends BaseAdapter {
        // ImageButton cart=(ImageButton)newView.findViewById(R.id.cart);
         //ImageButton search= (ImageButton)newView.findViewById(R.id.find);
         ImageView image=(ImageView) newView.findViewById(R.id.itemimage);
-
+        Button addToCart=(Button) newView.findViewById(R.id.add);
+        addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cart.get(item[position].getName())==null){
+                    cart.put(item[position].getName(),1);
+                }
+                else{
+                    cart.put(item[position].getName(),cart.get(item[position].getName())+1);
+                }
+                for (Map.Entry<String, Integer> entry : cart.entrySet()) {
+                    String key = entry.getKey();
+                    Integer value = entry.getValue();
+                    Log.d("Cart:",key+" / "+value);
+                    // ...
+                }
+                Toast.makeText(activity,"Add items successfully",Toast.LENGTH_SHORT).show();
+            }
+        });
         name.setText(item[position].getName());
         desc.setText(item[position].getDescription());
         stock.setText("#: "+item[position].getStock());
