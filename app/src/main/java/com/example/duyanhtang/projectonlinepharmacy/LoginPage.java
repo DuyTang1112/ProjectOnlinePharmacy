@@ -36,6 +36,7 @@ public class LoginPage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         setTitle("Login Page");
+        //LoginPage.this.deleteDatabase("project.db");
         login=(Button) findViewById(R.id.login);
         newuser=(Button) findViewById(R.id.newuser);
         status=(TextView) findViewById(R.id.status);
@@ -68,11 +69,15 @@ public class LoginPage extends Activity {
                 Cursor cur=db.rawQuery("select password from login_info where _id=?",new String[]{user.getText().toString()});
                 if (cur.getCount()==0){
                     Toast.makeText(LoginPage.this,"No such user is found",Toast.LENGTH_LONG).show();
+
                 }
                 else{
                     cur.moveToFirst();
                     if (cur.getString(0).equals(pass.getText().toString())){
                         Toast.makeText(LoginPage.this,"Login successfully",Toast.LENGTH_LONG).show();
+                        Intent intent=new Intent(LoginPage.this,Main.class);
+                        intent.putExtra("user",user.getText().toString());
+                        startActivity(intent);
                     }
                     else{
                         Toast.makeText(LoginPage.this,"Password does not match",Toast.LENGTH_LONG).show();

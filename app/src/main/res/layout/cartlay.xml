@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+    <TextView
+        android:id="@+id/totalnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="106dp"
+        android:layout_y="113dp"
+        android:text="total num items" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="156dp"
+        android:layout_height="49dp"
+        android:layout_x="111dp"
+        android:layout_y="46dp"
+        android:text="Description" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="108dp"
+        android:layout_y="23dp"
+        android:text="Name" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="67dp"
+        android:layout_height="76dp"
+        android:layout_x="20dp"
+        android:layout_y="32dp"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="270dp"
+        android:layout_y="42dp"
+        android:text="Delete" />
+
+    <TextView
+        android:id="@+id/totalprice"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_x="266dp"
+        android:layout_y="114dp"
+        android:text="Total price" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="221dp"
+        android:layout_y="112dp"
+        android:text="price" />
+</AbsoluteLayout>

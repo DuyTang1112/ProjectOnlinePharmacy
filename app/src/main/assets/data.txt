@@ -1,5 +1,5 @@
 Bayer Aspirin;Relieves minor aches & pains. For aspirin regimen use. Enteric coated;510;Medicine;15.99
-Alka-Seltzer Antacid & Pain Relief;For heartburn & acid indigestion. Relieves headache & body aches. Use for sour & upset stomach;123;medicine;10.99
+Alka-Seltzer Antacid & Pain Relief;For heartburn & acid indigestion. Relieves headache & body aches.;123;Medicine;10.99
 Alan Aspirin;Relieves minor aches & pains;310;Medicine;13.99
 Kniw Aspirin;Treat minor aches & pains;31;Medicine;12.99
 Walgreen Mucus Relieve;Helps loosen phlegm;100;Medicine;19.99
@@ -9,8 +9,8 @@ Garnel's Shampoo;Give you a fresh look with amazing smell;313;Personal Care;24.9
 AXE's Conditioner;Magnetic softeners leave your hair soft to the touch;213;Personal Care;13.99
 Walgreens Super Probiotic Digestive Support Capsules;Maintain body's natural digestive system;131;Vitamins;23.99
 Walgreens One Daily Multivitamin With Iron, Tablets;Promotes cellular integrity & health;312;Vitamins;9.49
-Nature Made Calcium 600 mg with Vitamin D Dietary Supplement Liquid Softgels;This supplement helps build strong bones and may help prevent osteoporosis;131;Vitamins;23.99
+Nature Made Calcium 600 mg with Vitamin D Dietary Supplement;This supplement helps build strong bones and help prevent osteoporosis;131;Vitamins;23.99
 Walgreens One Daily Multivitamin Without Iron, Tablets;Promotes cellular integrity & health;312;Vitamins;9.49
 Maybelline Baby Skin Instant Pore Eraser; Smoothes and refines skin's appearance;612;Beauty;6.99
 L'Oreal Paris Magic Perfecting Base Face Primer Cream;Get the perfect skin texture, instantly. Wears all day;1000;Beauty;7.99
-No7 Lift & Luminate Foundation, SPF 15;A luminating foundation which has been formulated with a polymer to help appear to visibly lift and give firmer feeling skin;300;Beauty;12.99
+No7 Lift & Luminate Foundation, SPF 15;Help appear to visibly lift and give firmer feeling skin;300;Beauty;12.99
