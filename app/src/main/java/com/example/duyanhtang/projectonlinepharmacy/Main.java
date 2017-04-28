@@ -17,10 +17,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main extends AppCompatActivity {
+    final int CARTPAGE_REQUESTCODE=100;
     ListView lv;
     EditText searchbar;
     ImageButton searchbutton,cartbutton;
@@ -29,6 +32,7 @@ public class Main extends AppCompatActivity {
     SQLiteDatabase db;
     String userid;
     Cursor cur;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -48,8 +52,8 @@ public class Main extends AppCompatActivity {
                     return;
                 }
                 String sql="select name, description, quantity, category, price from item_info " +
-                        "where name like '%"+searchbar.getText().toString().toLowerCase()+
-                        "%' or category like '%"+searchbar.getText().toString().toLowerCase()+"%'";
+                        "where name like '%"+searchbar.getText().toString().trim().toLowerCase()+
+                        "%' or category like '%"+searchbar.getText().toString().trim().toLowerCase()+"%'";
                 Cursor cur=db.rawQuery(sql,null);
                 cur.moveToFirst();
                 Item[] items=new Item[cur.getCount()];
@@ -65,11 +69,35 @@ public class Main extends AppCompatActivity {
             }
         });
         cartbutton=(ImageButton) findViewById(R.id.cart);
+        cartbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               /* String[] itemName=new String[cart.size()];
+                int[] itemCount=new int[cart.size()];
+                int i=0;
+                for (Map.Entry<String, Integer> entry : cart.entrySet()) {
+                    String key = entry.getKey();
+                    Integer value = entry.getValue();
+                    itemName[i]=key;
+                    itemCount[i]=value;
+                    i++;
+                    // ...
+                }
+                Log.d("Purchased items", Arrays.toString(itemName));
+                Log.d("Purchased quantity", Arrays.toString(itemCount));*/
+                Intent intent=new Intent(Main.this,CartPage.class);
+                intent.putExtra("cart",cart);
+                startActivityForResult(intent,CARTPAGE_REQUESTCODE);
+               // intent.putExtra("items",itemName);
+               // intent.putExtra("quantity",itemCount);
+
+            }
+        });
         cart=new HashMap<>();
         userid=getIntent().getStringExtra("user");
         Log.d("User logging in",userid);
-        readData();
-        checkinfo();
+        readData();// set list view to have all data
+        checkinfo();// debug
     }
 
     private void checkinfo() {
@@ -77,7 +105,7 @@ public class Main extends AppCompatActivity {
         Log.d("count",cur.getCount()+"");
         cur.moveToFirst();
         Log.d("User logging in info:",cur.getString(0)+" "+cur.getString(1)+" "+cur.getString(2)+" "+cur.getString(3)+" "
-        + cur.getString(4)+" "+cur.getString(5)+" ");
+        + cur.getString(4)+" "+cur.getString(5)+" "+ cur.getString(6)+" "+cur.getString(7)+" ");
     }
 
     @Override
@@ -106,6 +134,10 @@ public class Main extends AppCompatActivity {
             case R.id.beauty_category:
                 cur=db.rawQuery("select name, description, quantity, category, price from item_info " +
                         "where category=? ",new String[]{"Beauty"});
+                break;
+            case R.id.sport_category:
+                cur=db.rawQuery("select name, description, quantity, category, price from item_info " +
+                        "where category=? ",new String[]{"Sports"});
                 break;
             case R.id.user_info:
                 return true;
@@ -145,5 +177,13 @@ public class Main extends AppCompatActivity {
         }
         listView lvadapter=new listView(Main.this,items,cart);
         lv.setAdapter(lvadapter);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode==CARTPAGE_REQUESTCODE){
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

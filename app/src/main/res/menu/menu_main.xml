@@ -10,6 +10,7 @@
             <item android:id="@+id/pers_care_category" android:title="Personal Care"></item>
             <item android:id="@+id/vitamins_category" android:title="Vitamins"></item>
             <item android:id="@+id/beauty_category" android:title="Beauty"></item>
+            <item android:id="@+id/sport_category" android:title="Sports"></item>
         </menu>
     </item>>
     <item

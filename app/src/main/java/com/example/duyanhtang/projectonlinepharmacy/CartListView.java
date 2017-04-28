@@ -1,11 +1,13 @@
 package com.example.duyanhtang.projectonlinepharmacy;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -49,21 +51,41 @@ public class CartListView extends BaseAdapter {
         LayoutInflater inf = LayoutInflater.from(activity);
 
         if (convertView == null)
-            newView = inf.inflate(R.layout.row, null, true);
+            newView = inf.inflate(R.layout.cartlay, null, true);
         else
             newView = convertView;
 
-        TextView name = (TextView) newView.findViewById(R.id.name);
-        TextView desc = (TextView) newView.findViewById(R.id.description);
-        TextView stock = (TextView) newView.findViewById(R.id.stock);
-        TextView price = (TextView) newView.findViewById(R.id.price);
-        ImageButton cart = (ImageButton) newView.findViewById(R.id.cart);
-        ImageButton search = (ImageButton) newView.findViewById(R.id.find);
-
-        name.setText(item.get(position).getName());
+        TextView name = (TextView) newView.findViewById(R.id.name_cart);
+        TextView desc = (TextView) newView.findViewById(R.id.desc);
+        TextView stock = (TextView) newView.findViewById(R.id.totalnum);
+        TextView totalprice=(TextView) newView.findViewById(R.id.totalprice);
+        ImageView image= (ImageView) newView.findViewById(R.id.img_cart);
+        String itemname=item.get(position).getName();
+        name.setText(itemname);
         desc.setText(item.get(position).getDescription());
-        stock.setText(item.get(position).getStock());
-        price.setText(item.get(position).getPrice() + "");
+
+
+        Log.d("Just checking "+itemname,cart.get(itemname)+"");
+        int quantity=cart.get(itemname);
+        stock.setText(quantity+"");
+        totalprice.setText(quantity*item.get(position).getPrice()+"$");
+        switch (item.get(position).category){
+            case "Medicine":
+                image.setImageResource(R.drawable.medicine);
+                break;
+            case "Personal Care":
+                image.setImageResource(R.drawable.personalcare);
+                break;
+            case "Vitamins":
+                image.setImageResource(R.drawable.vitamins);
+                break;
+            case "Beauty":
+                image.setImageResource(R.drawable.beauty);
+                break;
+            case "Sports":
+                image.setImageResource(R.drawable.sport);
+                break;
+        }
 
 
         return newView;

@@ -14,3 +14,82 @@ Walgreens One Daily Multivitamin Without Iron, Tablets;Promotes cellular integri
 Maybelline Baby Skin Instant Pore Eraser; Smoothes and refines skin's appearance;612;Beauty;6.99
 L'Oreal Paris Magic Perfecting Base Face Primer Cream;Get the perfect skin texture, instantly. Wears all day;1000;Beauty;7.99
 No7 Lift & Luminate Foundation, SPF 15;Help appear to visibly lift and give firmer feeling skin;300;Beauty;12.99
+Pampers;Pampers Swaddlers Diapers Size 5, 152 Count (One Month Supply);1523;Personal Care;21.27
+Higgies;Huggies Snug & Dry Diapers, Size 3, 222 Count (One Month Supply);723;Personal Care;28.22
+Nail Kit;Nail Art Drill KIT , Aoohe Professional Finger Toe Nail Care Electric Nail Polishing Machine Manicure Pedicure Kit Nail;232;Personal Care;10.98
+Teeth Whitening;Active Wow Teeth Whitening Charcoal Powder Natural;515;Personal Care;24.99
+Protein Ber;Larabar Gluten Free Bar, Chocolate Chip Cookie Dough, 1.6 oz Bars (16 Count);823;Personal Care;14.26
+Aloe vera Cream;Personal Care Aloe Vera Skin Cream 8oz Jar;96;Personal Care;7.99
+Razor Hydro;Schick Hydro 3 Razor for Men Value Pack with 4 Razor Blade Refills;723;Personal Care;12.99
+Bic Razor;BIC Comfort 3 Advance Disposable Razor, Men, 4-Count;103;Personal Care;2.66
+Bic Women Razor;BIC Soleil Color Collection, Disposable Razor, Women;781;Personal Care;8.72
+Colgate Toothbrush;Colgate 360 Degree Adult Full Head Toothbrush, Medium, 4 Count;639;Personal Care;7.60
+Oral-B Toothbrush;Oral-B Pro-Health Clinical Pro-Flex Toothbrush with Flexing Sides, 40S - Soft, 2 Count;981;Personal Care;6.32
+Electric Toothbrush;Philips Sonicare Essence Sonic Electric Rechargeable Toothbrush, White;2010;Personal Care;24.97
+Colgate Toothpaste;Colgate Total Advanced Whitening Paste Toothpaste 7.6oz 3 pack;913;Personal Care;9.26
+Crest Toothpaste;Crest 3D White Radiant Mint Whitening Toothpaste, 3.5 oz Twinpack;4121;Personal Care;5.10
+Trojan condoms;Trojan Condom ENZ Lubricated, 36 Count;3120;Personal Care;13.27
+SKYN condoms;SKYN Original Condoms, 24ct;283;Personal Care;10.91
+Durex condoms;Durex Performax Intense Condom, 24 Count;1078;Personal Care;6.79
+Pantene Shampoo;Pantene Pro-V Smooth and Sleek Shampoo, 25.4 Fl Oz (Pack of 2);879;Personal Care;13.99
+H&S Shampoo;Head and Shoulders Clinical Strength Dandruff and Seborrheic Dermatitis Shampoo 13.5 Fl Oz (Pack of 2);712;Personal Care;14.24
+TRESemme Shampoo;TRESemme Shampoo, Moisture Rich 28 oz;409;Personal Care;3.99
+Cottons Swabs;Q-tips Cotton Swabs;500;Beauty;2.98
+Remover Tools;JPNK Blackhead Remover Tools 6 PCS Professional Surgical Extractor Blackhead & Blemish Remover Kit with a Leather bag;4421;Beauty;11.99
+Eye Gel;Baebody Eye Gel for Dark Circles, Puffiness, Wrinkles and Bags. - The Most Effective Anti-Aging Eye Gel for Under and Around Eyes - 1.7 fl oz;1480;Beauty;23.99
+Facial Gel;Pure Body Naturals Beauty Dead Sea Mud Mask for Facial Treatment, 250g / 8.8 fl.oz;250;Beauty;17.05
+Makeup Sponge;4pcs Makeup Sponge, FTXJ Pro Beauty Flawless Makeup Blender Multi Shape Puff;371;Beauty;1.95
+Sunscreen;Thinkbaby Safe Sunscreen SPF 50+, 3oz;823;Beauty;11.39
+Makeup Remover;Neutrogena Makeup Remover Cleansing Towelettes & Wipes Refill Pack, 25 Count (Pack of 6);813;Beauty;18.73
+Beauty Blender;beautyblender blendercleanser solid, 1 Ounce;89;Beauty;9.72
+Facial Mask;Mabox Blackhead Remover Mask ,Blackhead Cleansing Mask Cleaner Face Mask/Deep Clean Blackhead/Farewell Strawberry Nose/Blackhead Killer Facial Masks Black 50ml;1131;Beauty;12.99
+Philips Trimmer;Philips Norelco Multigroom Series 3000, 13 attachments, MG3750;324;Beauty;17.95
+Dove Deodorant;Dove Men+Care Antiperspirant Deodorant Stick, Extra Fresh 2.7 oz, Twin Pack;278;Beauty;7.00
+Beauty Braceletes;His or Hers Matching Set His Beauty Her Beast Titanium Stainless Steel Couple Bracelet in a Gift Box;121;Beauty;17.45
+Body oil;Bio-Oil Liquid Purcellin Oil, 4.2 Fl Oz;425;Beauty;12.33
+3D White;Crest 3D White Luxe Whitestrips Professional Effects - 20 Treatments and White Whitestrips 1 Hour Express - 2 Treatments Teeth Whitening Kit;465;Beauty;43.99
+Facial Brush;Hansderma SkinSoft Facial Mask Brush (Golden brush);723;Beauty;5.71
+Makeup Sponge;4pcs Pro Beauty Flawless Makeup Sponges Blender Foundation Puff Multi Color,Shape (Water Drop Shape);413;Beauty;3.54
+Nature Multi Gummies; Natural fruit flavors, Gluten free;200;Vitamins;19.99
+Natures Way Alive!;The ultimate nutritional energy source;150;Vitamins;26.99
+Walgreens Multivitamin 50+;	Formula for adults 50+;150;Vitamins;8.99
+Star Wars Multi-Vitamin; Features Star Wars hero shapes;280;Vitamins;9.99
+One A day VitaCraves; Formulated with key vitamins & minerals;198;Vitamins;17.89
+Natures Alive!;Citrus flavored multi-vitamin;150;Vitamins; 33.99
+Rainbow Light Just Once; With energizing B complex;147;Vitamins;36.39
+Yum-Vs Multivitamin; Yummy Grape flavor;78;Vitamins;8.99
+Natures Way; 26 fruits & vegetables;69;Vitamins;10.79
+Olympian Labs; Contains vitamins, minerals & herbs;190;Vitamins;34.69
+Centrum Vitamins; With B-vitamins & chromium;35; Vitamins;8.99
+Nutrition Now; Dietary Supplement;70;Vitamins;7.99
+Vitafusion MultiVites; Excellent source of vitamins A, C & D;30;Vitamins;10.98
+Natrol Omega;For cardiovascular & cognitive health;29;Vitamins;11.99
+Vitafusion Teen Hair; Essential daily formula;50;Vitamins;12.99
+Collagen Beauty;NeoCell Collagen Beauty Builder 150 Tablets;278;Beauty;15.95
+Disney Beauty;Disney Beauty and The Beast Live Action Baby Belle Doll;389;Beauty;19.99
+Corset;Lover-Beauty Women's Latex Underbust Corset Waist Training Cincher 9 Steel Boned;171;Beauty;18.70
+Raimbow nail powder;PrettyDiva 1g/Box Laser Holographic Nail Powder Rainbow Chrome Nail Powder Manicure Pigment;623;Beauty;8.99
+Nail Lamp;MelodySusie Portable LED Nail Lamp - Violetilac 6W Mini Nail Dryer Curing LED GEL Nail Polish Professionally - White;356;Beauty;10.00
+Nail polish;OPI Nail Polish, Lucky Lucky Lavender, 0.5 fl. oz.;567;Beauty;10.00
+Bamboo Hairbrush;Bamboo Hair Brush Set By JUNE Care - 1 Natural Boar;512;Beauty;19.99
+Conair Brush;Conair Pro Hair Brush with Nylon Bristle, All-Purpose;319;Beauty;5.88
+Amino Energy;Optimum Nutrition Essential AmiN.O. Energy, 30 Servings;713;Sports;18.99
+BCAA Energy;EVLUTION NUTRITION BCAA Energy, 30 Servings;1078;Sports;19.99
+Amino Lean;RSP Nutrition AminoLean Energy Formula, 30 Servings;567;Sports;29.49
+BCAAs; SciVation Xtend, 30 Servings;764;Sports;23.98
+Regen. BCAA;RSP Nutrition ReGen BCAA, 50 Servings;915;Sports;43.90
+BCAA 500;EVLUTION NUTRITION BCAA 5000, 240 Capsules;441;Sports;19.99
+Energy lean BCAA;EVLUTION NUTRITION BCAA Lean Energy, 30 Servings;312;Sports;23.79
+Pre-Work;Cellucor C4 50x, 45 Servings;387;Sports;39.99
+Energy Evolution;EVLUTION NUTRITION ENGN Shred, 30 Servings;221;Sports;34.99
+Pre-K;Kaged Muscle PRE-KAGED, 20 Servings;1023;Sports;35.98
+EGN;EVLUTION NUTRITION ENGN, 30 Servings;767;Sports;29.99
+Whey Protein;Optimum Nutrition Gold Standard 100% Whey, 5 Lbs.;3071;Sports;57.99
+Prot. Bars;MusclePharm Combat Crunch Bars, 12 Bars;367;Sports;24.99
+Nitro Protein;MuscleTech NITRO-TECH, 4 Lbs.;2045;Sports;49.85
+ISO Protein;Dymatize ISO-100 Whey Isolate Powder for Building Muscle, 5 Lbs.;765;Sports;74.99
+Syntha Protein;BSN Syntha-6 Ultra-Premium Protein Matrix, 2.91 Lbs.;623;Sports;29.58
+Platinium Creatine;MuscleTech Platinum 100% Creatine Ultra-Pure Micronized Creatine Powder, 400 Grams;2037;Sports;10.78
+C4 Creatine;Cellucor C4 50x, 45 Servings Now 50% More Explosive!;823;Sports;39.99
+JYM prework;JYM Pre JYM, 30 Servings Pre-Workout Powder Powerhouse;328;Sports;47.97
+Kaged;Kaged Muscle PRE-KAGED, 20 Servings Revolutionary Pre-Workout Primer!;613;Sports;35.98

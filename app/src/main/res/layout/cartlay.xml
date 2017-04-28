@@ -2,61 +2,63 @@
 <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
-
-    <TextView
-        android:id="@+id/totalnum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="106dp"
-        android:layout_y="113dp"
-        android:text="total num items" />
-
-    <TextView
-        android:id="@+id/desc"
-        android:layout_width="156dp"
-        android:layout_height="49dp"
-        android:layout_x="111dp"
-        android:layout_y="46dp"
-        android:text="Description" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="108dp"
-        android:layout_y="23dp"
-        android:text="Name" />
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/img_cart"
         android:layout_width="67dp"
         android:layout_height="76dp"
         android:layout_x="20dp"
         android:layout_y="32dp"
         app:srcCompat="@mipmap/ic_launcher" />
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="156dp"
+        android:layout_height="49dp"
+        android:layout_x="104dp"
+        android:layout_y="45dp"
+        android:text="Description" />
+
+    <TextView
+        android:id="@+id/name_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="270dp"
-        android:layout_y="42dp"
-        android:text="Delete" />
+        android:layout_x="102dp"
+        android:layout_y="11dp"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/totalnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="138dp"
+        android:layout_y="120dp"
+        android:text="10"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/totalprice"
         android:layout_width="92dp"
         android:layout_height="wrap_content"
-        android:layout_x="266dp"
-        android:layout_y="114dp"
+        android:layout_x="232dp"
+        android:layout_y="122dp"
         android:text="Total price" />
 
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="221dp"
+    <ImageButton
+        android:id="@+id/sub"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_x="88dp"
         android:layout_y="112dp"
-        android:text="price" />
+        app:srcCompat="@drawable/minusbut" />
+
+    <ImageButton
+        android:id="@+id/add"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_x="174dp"
+        android:layout_y="112dp"
+        app:srcCompat="@drawable/addbut" />
+
 </AbsoluteLayout>

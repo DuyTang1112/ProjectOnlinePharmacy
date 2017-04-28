@@ -6,7 +6,7 @@
     <ListView
         android:id="@+id/cartList"
         android:layout_width="match_parent"
-        android:layout_height="415dp"
+        android:layout_height="460dp"
         android:layout_x="6dp"
         android:layout_y="1dp" />
 
@@ -14,16 +14,16 @@
         android:id="@+id/totalCart"
         android:layout_width="164dp"
         android:layout_height="54dp"
-        android:layout_x="20dp"
-        android:layout_y="435dp"
-        android:text="resume" />
+        android:layout_x="14dp"
+        android:layout_y="493dp"
+        android:textSize="20sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/purchase"
         android:layout_width="134dp"
         android:layout_height="wrap_content"
-        android:layout_x="239dp"
-        android:layout_y="440dp"
+        android:layout_x="220dp"
+        android:layout_y="490dp"
         android:text="Finish my purchase" />
 
 </AbsoluteLayout>

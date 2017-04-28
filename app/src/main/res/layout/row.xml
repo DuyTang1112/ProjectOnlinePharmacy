@@ -2,7 +2,7 @@
 <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/itemimage"
@@ -25,28 +25,10 @@
     <TextView
         android:id="@+id/description"
         android:layout_width="204dp"
-        android:layout_height="57dp"
+        android:layout_height="75dp"
         android:layout_x="87dp"
         android:layout_y="52dp"
         android:text="Description" />
-
-    <TextView
-        android:id="@+id/stock"
-        android:layout_width="59dp"
-        android:layout_height="wrap_content"
-        android:layout_x="88dp"
-        android:layout_y="121dp"
-        android:text="stock"
-        android:textStyle="italic" />
-
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="74dp"
-        android:layout_height="wrap_content"
-        android:layout_x="165dp"
-        android:layout_y="122dp"
-        android:text="price"
-        android:textStyle="italic" />
 
     <Button
         android:id="@+id/add"
@@ -57,4 +39,22 @@
         android:layout_y="64dp"
         android:text="Add "
         android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/stock"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_x="88dp"
+        android:layout_y="131dp"
+        android:text="stock"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:layout_x="164dp"
+        android:layout_y="131dp"
+        android:text="price"
+        android:textStyle="italic" />
 </AbsoluteLayout>

@@ -102,8 +102,8 @@ public class LoginPage extends Activity {
             String s;
             while((s=buf.readLine())!=null){
                 String[] arr=s.split(";");
-                Log.d("Array", Arrays.toString( arr));
-                Log.d("Length",""+arr.length);
+                //Log.d("Array", Arrays.toString( arr));
+               // Log.d("Length",""+arr.length);
                 //check for existing item
                 Cursor cur=db.rawQuery("SELECT * from item_info WHERE name=?",new String[]{arr[0]});
                 if (cur.getCount()==0){ // if item does not exist then add

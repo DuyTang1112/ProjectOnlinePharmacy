@@ -75,6 +75,7 @@ public class listView extends BaseAdapter {
                     Log.d("Cart:",key+" / "+value);
                     // ...
                 }
+
                 Toast.makeText(activity,"Add items successfully",Toast.LENGTH_SHORT).show();
             }
         });
@@ -94,6 +95,9 @@ public class listView extends BaseAdapter {
                 break;
             case "Beauty":
                 image.setImageResource(R.drawable.beauty);
+                break;
+            case "Sports":
+                image.setImageResource(R.drawable.sport);
                 break;
         }
 
