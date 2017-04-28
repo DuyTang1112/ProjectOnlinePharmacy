@@ -1,6 +1,8 @@
 package com.example.duyanhtang.projectonlinepharmacy;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -89,6 +91,7 @@ public class Main extends AppCompatActivity {
                 Log.d("Purchased quantity", Arrays.toString(itemCount));*/
                 Intent intent=new Intent(Main.this,CartPage.class);
                 intent.putExtra("cart",cart);
+                intent.putExtra("userid",userid);
                 startActivityForResult(intent,CARTPAGE_REQUESTCODE);
                // intent.putExtra("items",itemName);
                // intent.putExtra("quantity",itemCount);
@@ -142,10 +145,17 @@ public class Main extends AppCompatActivity {
                         "where category=? ",new String[]{"Sports"});
                 break;
             case R.id.user_info:
+                Intent intent=new Intent(Main.this,UserInfoPage.class);
+                intent.putExtra("userid",userid);
+                startActivity(intent);
                 return true;
             case R.id.trans_hist:
+                Intent inte=new Intent(Main.this,Transactions_activity.class);
+                inte.putExtra("userid",userid);
+                startActivity(inte);
                 return true;
             case R.id.sign_out:
+                onBackPressed();
                 return true;
         }
         cur.moveToFirst();
@@ -191,5 +201,20 @@ public class Main extends AppCompatActivity {
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(Main.this);
+        builder.setTitle("Sign Out?");
+        builder.setMessage("Do you want to sign out?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Main.this.finish();
+            }
+        });
+        builder.setNegativeButton("No", null);
+        builder.create().show();
     }
 }

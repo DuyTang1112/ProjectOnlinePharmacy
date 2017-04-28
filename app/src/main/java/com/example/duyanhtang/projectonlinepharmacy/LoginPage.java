@@ -53,12 +53,6 @@ public class LoginPage extends Activity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*boolean deleted = LoginPage.this.deleteDatabase("hw5.db");
-                if (deleted) {
-                    Toast.makeText(LoginPage.this, "Database deleted", Toast.LENGTH_LONG).show();
-
-                }else
-                    Toast.makeText(LoginPage.this, "Database not deleted", Toast.LENGTH_LONG).show();*/
                 if (user.getText().toString().length()*pass.getText().toString().length()==0){
                     Toast.makeText(LoginPage.this,"All fields should be filled",Toast.LENGTH_LONG).show();
                     return;
@@ -118,7 +112,7 @@ public class LoginPage extends Activity {
                     }
                     else{
                         Log.d("Status sql read","read successful");
-                    };
+                    }
                 }
                 else{
                     Log.d("Status sql read","already read this");
@@ -129,8 +123,6 @@ public class LoginPage extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-    ;
     }
 
     @Override

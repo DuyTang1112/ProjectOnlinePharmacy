@@ -73,7 +73,7 @@ public class CartListView extends BaseAdapter {
         Log.d("Just checking "+itemname,cart.get(itemname)+"");
         final int quantity=cart.get(itemname);
         stock.setText(quantity+"");
-        totalprice.setText(quantity*item.get(position).getPrice()+"$");
+        totalprice.setText(String.format("%.2f", quantity*item.get(position).getPrice())+"$");
         switch (item.get(position).category){
             case "Medicine":
                 image.setImageResource(R.drawable.medicine);

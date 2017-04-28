@@ -58,7 +58,8 @@ public class SQL  extends SQLiteOpenHelper {
                 + "userid TEXT, "
                 + "itemid INTEGER NOT NULL, "
                 + "quantity INTEGER NOT NULL, "
-                + "date DATETIME, "
+                + "date DATETIME DEFAULT CURRENT_TIMESTAMP, "
+                + "total REAL, "
                 + "FOREIGN KEY(userid) REFERENCES client_info(_id), "
                 + "FOREIGN KEY(itemid) REFERENCES item_info(_id) ); "
 
@@ -71,7 +72,7 @@ public class SQL  extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS login_info" );
         db.execSQL("DROP TABLE IF EXISTS item_info");
         db.execSQL("DROP TABLE IF EXISTS client_info");
-        db.execSQL("DROP TABLE IF EXISTS transactions");
+        db.execSQL("DROP TABLE IF EXISTS Transactions_activity");
 
         // create new tables
         onCreate(db);
