@@ -1,6 +1,7 @@
 package com.example.duyanhtang.projectonlinepharmacy;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -58,7 +59,16 @@ public class CartPage extends AppCompatActivity {
         }
         Log.d("Size items",items.size()+"");
         totalPriceCart.setText("Total: "+String.format("%.2f", sum)+" $");
-        BaseAdapter adapter=new CartListView(CartPage.this, items, cart);
+
+        BaseAdapter adapter=new CartListView(CartPage.this, items, cart,totalPriceCart);
         lv.setAdapter(adapter);
+    }
+    //override the back button to update the cart
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent();
+        intent.putExtra("cart",cart);
+        setResult(1,intent);
+        finish();
     }
 }

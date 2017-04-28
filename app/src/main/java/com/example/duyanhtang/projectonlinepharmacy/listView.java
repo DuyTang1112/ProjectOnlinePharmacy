@@ -26,7 +26,9 @@ public class listView extends BaseAdapter {
         this.item=item;
         this.cart=cart;
     }
-
+    public void updateCart(HashMap<String,Integer> cart){
+        this.cart=cart;
+    }
     @Override
     public int getCount() {
         return item.length;

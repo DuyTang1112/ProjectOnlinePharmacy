@@ -21,6 +21,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 public class Main extends AppCompatActivity {
     final int CARTPAGE_REQUESTCODE=100;
@@ -32,6 +33,7 @@ public class Main extends AppCompatActivity {
     SQLiteDatabase db;
     String userid;
     Cursor cur;
+    listView lvadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,7 +157,7 @@ public class Main extends AppCompatActivity {
             Log.d("Item",items[i].toString());
             cur.moveToNext();
         }
-        listView lvadapter=new listView(Main.this,items,cart);
+        lvadapter=new listView(Main.this,items,cart);
         lv.setAdapter(lvadapter);
         return true;
     }
@@ -178,11 +180,15 @@ public class Main extends AppCompatActivity {
         listView lvadapter=new listView(Main.this,items,cart);
         lv.setAdapter(lvadapter);
     }
-
+    // handle when user has updated the cart page
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode==CARTPAGE_REQUESTCODE){
-
+            if (data!=null){
+                cart = (HashMap<String, Integer>)data.getSerializableExtra("cart");
+                Log.d("Cart list updated","Size="+cart.size());
+                readData();
+            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
