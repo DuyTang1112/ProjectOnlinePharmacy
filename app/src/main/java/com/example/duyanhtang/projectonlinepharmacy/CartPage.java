@@ -87,6 +87,9 @@ public class CartPage extends AppCompatActivity {
                     values.put("total",Double.parseDouble(total.substring(7,total.length()-2)));
                     db.insert("transactions",null,values);
                     Log.i("Purchased",itemName+" "+ itemQuantity);
+                    String updateString="UPDATE item_info SET quantity = quantity - "+itemQuantity+" where name = '"+itemName+"' ;";
+                    Log.d("Update syntax",updateString);
+                    db.execSQL(updateString);
                 }
                 Cursor cur = db.rawQuery("select * from transactions", null);
                 Log.d("Purchased length",cur.getCount()+" ");
@@ -96,6 +99,8 @@ public class CartPage extends AppCompatActivity {
                 BaseAdapter adapter=new CartListView(CartPage.this, items, cart,totalPriceCart);
                 lv.setAdapter(adapter);
                 totalPriceCart.setText("Total: "+String.format("%.2f", (float)0)+" $");
+
+                //show dialog
                 AlertDialog.Builder builder=new AlertDialog.Builder(CartPage.this);
                 builder.setTitle("Purchase completed");
                 builder.setMessage("Your order has been sent to one of salesman. " +

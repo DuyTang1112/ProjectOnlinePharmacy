@@ -62,10 +62,13 @@ public class Main extends AppCompatActivity {
                 cur.moveToFirst();
                 Item[] items=new Item[cur.getCount()];
                 for (int i=0;i<items.length;i++){
-                    items[i]=new Item(cur.getString(0),cur.getString(1),
-                            Integer.parseInt(cur.getString(2)),cur.getString(3),
-                            Double.parseDouble(cur.getString(4)));
-                    Log.d("Item",items[i].toString());
+                    int quantity=Integer.parseInt(cur.getString(2));
+                    if (quantity>0){
+                        items[i]=new Item(cur.getString(0),cur.getString(1),
+                                quantity,cur.getString(3),
+                                Double.parseDouble(cur.getString(4)));
+                        Log.d("Item",items[i].toString());
+                    }
                     cur.moveToNext();
                 }
                 listView lvadapter=new listView(Main.this,items,cart);
@@ -161,10 +164,13 @@ public class Main extends AppCompatActivity {
         cur.moveToFirst();
         Item[] items=new Item[cur.getCount()];
         for (int i=0;i<items.length;i++){
-            items[i]=new Item(cur.getString(0),cur.getString(1),
-                    Integer.parseInt(cur.getString(2)),cur.getString(3),
-                    Double.parseDouble(cur.getString(4)));
-            Log.d("Item",items[i].toString());
+            int quantity=Integer.parseInt(cur.getString(2));
+            if (quantity>0){
+                items[i]=new Item(cur.getString(0),cur.getString(1),
+                        quantity,cur.getString(3),
+                        Double.parseDouble(cur.getString(4)));
+                Log.d("Item",items[i].toString());
+            }
             cur.moveToNext();
         }
         lvadapter=new listView(Main.this,items,cart);
@@ -181,11 +187,15 @@ public class Main extends AppCompatActivity {
         cur.moveToFirst();
         Item[] items=new Item[cur.getCount()];
         for (int i=0;i<items.length;i++){
+            int quantity=Integer.parseInt(cur.getString(2));
+            if (quantity>0){
             items[i]=new Item(cur.getString(0),cur.getString(1),
-                    Integer.parseInt(cur.getString(2)),cur.getString(3),
+                    quantity,cur.getString(3),
                     Double.parseDouble(cur.getString(4)));
             Log.d("Item",items[i].toString());
+            }
             cur.moveToNext();
+
         }
         listView lvadapter=new listView(Main.this,items,cart);
         lv.setAdapter(lvadapter);

@@ -18,7 +18,7 @@ public class Transactions_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transactions);
+        setContentView(R.layout.transactions_page);
         setTitle("Transactions");
         sql=SQL.getInstance(Transactions_activity.this);
         db=sql.getReadableDatabase();
