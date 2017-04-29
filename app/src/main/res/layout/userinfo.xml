@@ -9,10 +9,11 @@
         android:id="@+id/userr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:text="User id:"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/textView20" />
+        android:layout_marginTop="35dp"
+        android:layout_toEndOf="@+id/textView20"
+        android:text="User id:"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView20"
@@ -22,16 +23,20 @@
         android:layout_below="@+id/userr"
         android:layout_marginStart="33dp"
         android:layout_marginTop="48dp"
-        android:text="First name:" />
+        android:text="First name:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/firstnameinfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/userr"
-        android:layout_alignTop="@+id/textView20"
-        android:layout_marginStart="22dp"
-        android:text="This is the first name" />
+        android:layout_marginStart="8dp"
+        android:text="This is the first name"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:layout_above="@+id/id90"
+        android:layout_toEndOf="@+id/id90" />
 
     <TextView
         android:id="@+id/id90"
@@ -40,7 +45,9 @@
         android:layout_alignStart="@+id/textView20"
         android:layout_below="@+id/textView20"
         android:layout_marginTop="23dp"
-        android:text="Middle name:" />
+        android:text="Middle name:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/midleinfo"
@@ -48,7 +55,9 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/firstnameinfo"
         android:layout_alignTop="@+id/id90"
-        android:text="This is the middle name:" />
+        android:text="This is the middle name:"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textView24"
@@ -57,7 +66,9 @@
         android:layout_alignStart="@+id/id90"
         android:layout_below="@+id/id90"
         android:layout_marginTop="23dp"
-        android:text="Last name:" />
+        android:text="Last name:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/lastinfo"
@@ -65,7 +76,9 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/midleinfo"
         android:layout_alignTop="@+id/textView24"
-        android:text="This is the last name " />
+        android:text="This is the last name "
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textView26"
@@ -74,7 +87,9 @@
         android:layout_alignStart="@+id/textView24"
         android:layout_below="@+id/textView24"
         android:layout_marginTop="23dp"
-        android:text="Age:" />
+        android:text="Age:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/ageinfo"
@@ -82,7 +97,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView26"
         android:layout_alignStart="@+id/lastinfo"
-        android:text="this is the age" />
+        android:text="this is the age"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textView30"
@@ -91,7 +108,9 @@
         android:layout_alignStart="@+id/textView26"
         android:layout_below="@+id/textView26"
         android:layout_marginTop="29dp"
-        android:text="Gender:" />
+        android:text="Gender:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/genderinfo"
@@ -99,7 +118,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView30"
         android:layout_alignStart="@+id/ageinfo"
-        android:text="this is the gender" />
+        android:text="this is the gender"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textView32"
@@ -108,7 +129,9 @@
         android:layout_alignStart="@+id/textView30"
         android:layout_below="@+id/textView30"
         android:layout_marginTop="27dp"
-        android:text="Address:" />
+        android:text="Address:"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/addressinfo"
@@ -116,16 +139,20 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView32"
         android:layout_alignStart="@+id/genderinfo"
-        android:text="This is the address" />
+        android:text="This is the address"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textView34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView32"
+        android:layout_below="@+id/textView32"
         android:layout_marginTop="25dp"
         android:text="Email"
-        android:layout_below="@+id/textView32"
-        android:layout_alignStart="@+id/textView32" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/mailinfo"
@@ -133,14 +160,19 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView34"
         android:layout_alignStart="@+id/addressinfo"
-        android:text="this is the email " />
+        android:text="this is the email "
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/useridinfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="italic"
         android:layout_alignBaseline="@+id/userr"
         android:layout_alignBottom="@+id/userr"
-        android:layout_toEndOf="@+id/userr" />
+        android:layout_toEndOf="@+id/userr"
+        android:layout_marginStart="8dp" />
 </RelativeLayout>

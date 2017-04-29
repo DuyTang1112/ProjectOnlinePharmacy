@@ -51,7 +51,7 @@ public class CartListView extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View newView = null;
         LayoutInflater inf = LayoutInflater.from(activity);
 
@@ -94,6 +94,10 @@ public class CartListView extends BaseAdapter {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (cart.get(itemname)+1>item.get(position).getStock()) {
+                    Toast.makeText(activity,"Cannot add more item",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 cart.put(itemname,cart.get(itemname)+1);
                 Log.d("Update item:",itemname+": "+cart.get(itemname));
                 //update total price in the cart

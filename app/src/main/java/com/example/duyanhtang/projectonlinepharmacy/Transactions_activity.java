@@ -19,7 +19,7 @@ public class Transactions_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.transactions_page);
-        setTitle("Transactions");
+        setTitle("Transactions history");
         sql=SQL.getInstance(Transactions_activity.this);
         db=sql.getReadableDatabase();
         lv=(ListView)findViewById(R.id.transactions_lv);

@@ -22,7 +22,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class LoginPage extends Activity {
-    final int NEW_USER=0,MAIN=0;
+    final int NEW_USER=0,MAIN=221;
     SQL sql;
     SQLiteDatabase db;
     Button login,newuser;
@@ -71,7 +71,7 @@ public class LoginPage extends Activity {
                         Toast.makeText(LoginPage.this,"Login successfully",Toast.LENGTH_LONG).show();
                         Intent intent=new Intent(LoginPage.this,Main.class);
                         intent.putExtra("user",user.getText().toString());
-                        startActivity(intent);
+                        startActivityForResult(intent,MAIN);
                     }
                     else{
                         Toast.makeText(LoginPage.this,"Password does not match",Toast.LENGTH_LONG).show();
@@ -127,14 +127,19 @@ public class LoginPage extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         if (requestCode==NEW_USER ){
             if (data!=null){
                 if (data.getIntExtra("result",-1)==0) Toast.makeText(LoginPage.this,"Cannot register new user",Toast.LENGTH_LONG).show();
                 else if (data.getIntExtra("result",-1)==1) Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG).show();
             }
             if (resultCode==2) Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG).show();
+            pass.setText("");
             //if (resultCode==2)Toast.makeText(LoginPage.this,"New user created successfully ",Toast.LENGTH_LONG).show();
             //else if (resultCode==1) Toast.makeText(LoginPage.this,"Cannot register new user",Toast.LENGTH_LONG).show();
+        }
+        else if (requestCode==MAIN){
+            pass.setText("");
         }
         super.onActivityResult(requestCode, resultCode, data);
 
