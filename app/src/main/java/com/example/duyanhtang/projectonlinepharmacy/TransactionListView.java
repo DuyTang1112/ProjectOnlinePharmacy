@@ -65,10 +65,10 @@ public class TransactionListView extends BaseAdapter {
         Log.d("Transactions item:",transactions[position].toString());
 
         name.setText(transactions[position].prod_name+"");
-        quant.setText("Quantity:"+transactions[position].prod_quantity+"");
-        date.setText(transactions[position].date+"");
-        id.setText("Transcation id#:"+transactions[position].id);
-        amount.setText(transactions[position].price+" $");
+        quant.setText("Quantity: "+transactions[position].prod_quantity+"");
+        date.setText("Date purchased: \n"+transactions[position].date+"");
+        id.setText("Transaction ID: #"+transactions[position].id);
+        amount.setText("Total price: \n"+transactions[position].price+" $");
 
 
 

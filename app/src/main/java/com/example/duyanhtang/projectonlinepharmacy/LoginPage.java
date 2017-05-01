@@ -27,7 +27,7 @@ public class LoginPage extends Activity {
     SQLiteDatabase db;
     Button login,newuser;
     TextView status;
-    String[] categories={"Medicine","Personal Care","Vitamins","Beauty"};
+    //String[] categories={"Medicine","Personal Care","Vitamins","Beauty"};
     AssetManager asm;
     SharedPreferences sharedPref;
     EditText user,pass;

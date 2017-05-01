@@ -83,8 +83,8 @@ public class listView extends BaseAdapter {
         });
         name.setText(item[position].getName());
         desc.setText(item[position].getDescription());
-        stock.setText("#: "+item[position].getStock());
-        price.setText(item[position].getPrice()+"$");
+        stock.setText("# In stock: "+item[position].getStock());
+        price.setText("Price: "+item[position].getPrice()+"$");
         switch (item[position].category){
             case "Medicine":
                 image.setImageResource(R.drawable.medicine);
